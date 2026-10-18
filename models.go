@@ -214,6 +214,16 @@ type Country struct {
 	Name    string `json:"eng"`
 	Visible int    `json:"visible"`
 	Rent    int    `json:"rent"`
+	// Label is the name of a pool-specific entry (ids like "pf:ca"), which has no Name.
+	Label string `json:"name,omitempty"`
+}
+
+// DisplayName is the country's English name, whichever field the entry uses.
+func (c Country) DisplayName() string {
+	if c.Name != "" {
+		return c.Name
+	}
+	return c.Label
 }
 
 type CountryList struct {

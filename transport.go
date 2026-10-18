@@ -21,7 +21,7 @@ import (
 )
 
 // Version of this SDK.
-const Version = "0.1.1"
+const Version = "0.1.2"
 
 // DefaultBaseURL is the production API.
 const DefaultBaseURL = "https://api.numberotp.com/v1"
